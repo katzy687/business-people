@@ -9,6 +9,7 @@
   PersonDataCtrl.$inject = [];
 
   function PersonDataCtrl() {
+    // please name the mock data array you are getting from the nodeJS route, "peopleData"
 
   }
 
