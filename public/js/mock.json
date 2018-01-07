@@ -1,8 +1,6 @@
 [
   {
     "profileImageURL": "http://www.roughbros.com/assets/uploads/leadership/dave.jpg",
-    "firstName": "David",
-    "lastName": "Roberts",
     "industry": [
       "Software",
       "Manufacturing",
@@ -24,14 +22,12 @@
     "companyRevenue": "$5.4 Billion",
     "companyEmployees": 5761,
     "companyDomain": "www.insight.com",
-    "id": 5,
-    "parentId": 3,
-    "level": 2
+    "id": 1,
+    "parentId": 2,
+    "level": 3
   },
   {
     "profileImageURL": "https://media.licdn.com/mpr/mpr/shrinknp_200_200/p/2/000/194/0c3/2bd416f.jpg",
-    "firstName": "Michael",
-    "lastName": "Meyer",
     "industry": [
       "Software",
       "Manufacturing",
@@ -52,14 +48,12 @@
     "companyRevenue": "$24.7 Billion",
     "companyEmployees": 72000,
     "companyDomain": "www.emc.com",
-    "id": 8,
-    "parentId": 4,
-    "level": 5
+    "id": 2,
+    "parentId": 3,
+    "level": 2
   },
   {
     "profileImageURL": "http://cloaklabs.com/wp-content/uploads/2013/06/430x300xhoodie_5_front-430x300.jpg.pagespeed.ic.QyEkaED9Bv.jpg",
-    "firstName": "Robert",
-    "lastName": "Miller",
     "industry": [
       "Software",
       "Manufacturing",
@@ -81,14 +75,12 @@
     "companyRevenue": "$81.7 Billion",
     "companyEmployees": 377757,
     "companyDomain": "www.ibm.com",
-    "id": 7,
-    "parentId": 5,
-    "level": 3
+    "id": 3,
+    "parentId": 15,
+    "level": 1
   },
   {
     "profileImageURL": "http://www.learningtech.org/img/Jim-Miller.jpg",
-    "firstName": "James",
-    "lastName": "Miller",
     "industry": [
       "Manufacturing",
       "Software",
@@ -115,8 +107,6 @@
   },
   {
     "profileImageURL": "https://media.licdn.com/mpr/mpr/shrinknp_200_200/p/2/000/005/384/0cd3821.jpg",
-    "firstName": "Howard",
-    "lastName": "Witkin",
     "industry": "Insurance",
     "lastUpdatedDate": "2016-12-01",
     "name": "Howard Witkin",
@@ -133,8 +123,52 @@
     "companyRevenue": "$3 Million",
     "companyEmployees": 15,
     "companyDomain": "www.lifeinsurance.net",
-    "id": 3,
-    "parentId": 15,
-    "level": 1
+    "id": 5,
+    "parentId": 3,
+    "level": 2
+  },
+  {
+    "profileImageURL": "https://media.licdn.com/mpr/mpr/shrinknp_200_200/AAEAAQAAAAAAAAF5AAAAJDgwMTRjZDI2LWQ3MTktNDUwNi04ZDlhLTg4NWNjMTdlNjVlMw.jpg",
+    "industry": "Software",
+    "lastUpdatedDate": "2017-03-13",
+    "name": "Amit Chowdhry",
+    "title": "Support Engineering Manager - Escalations",
+    "companyLogo": "http://i.s-microsoft.com/global/ImageStore/PublishingImages/logos/hp/logo-lg-1x.png",
+    "companyName": "Microsoft Corporation",
+    "companyAddress": {
+      "Street": "One Microsoft Way",
+      "City": "Redmond",
+      "State": "Washington",
+      "Zip": 98033,
+      "CountryCode": "United States"
+    },
+    "companyRevenue": "$85.3 Billion",
+    "companyEmployees": 114000,
+    "companyDomain": "www.microsoft.com",
+    "id": 6,
+    "parentId": 1,
+    "level": 5
+  },
+  {
+    "profileImageURL": "http://www.jindalsteelpower.com/img/frontend/images/team/Rakesh-Kumar.jpg",
+    "industry": "Software",
+    "lastUpdatedDate": "2017-03-15",
+    "name": "Rakesh Kumar",
+    "title": "Manager- Talent Aquisition",
+    "companyLogo": "http://www.itcinfotech.com/Oracle-Openworld/images/itc_logo.jpg",
+    "companyName": "ITC Infotech Inc",
+    "companyAddress": {
+      "Street": "12 Route 17 North Suite 303",
+      "City": "Paramus",
+      "State": "New Jersey",
+      "Zip": "07652",
+      "CountryCode": "United States"
+    },
+    "companyRevenue": "$3.4 Billion",
+    "companyEmployees": 7500,
+    "companyDomain": "www.itcinfotech.com",
+    "id": 7,
+    "parentId": 5,
+    "level": 3
   }
 ]
