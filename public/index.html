@@ -1,14 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width" />
     <title>ZoomInfo</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body ng-app="zoomInfo" ng-cloak>
+    <div class="wrapper" ng-controller="PersonDataCtrl as PersonDataCtrl">
+        <md-toolbar class="md-theme-light">
+            <h2 class="md-toolbar-tools">
+                <span>Business People</span>
+            </h2>
+        </md-toolbar>
+
+        <div class="list-container">
+            <ul>
+                <li class="person-item" ng-repeat="person in peopleData" ng-class="$last ? 'no-mb' : '' ">
+                    <div class="person-info">
+                        <md-checkbox class="checkbox"></md-checkbox>
+                        <div class="profile-img-container">
+                            <img ng-src="{{ person.profileImageURL }}"
+                                 err-src="./images/person_Placeholder.jpeg"
+                                 alt="{{ person.name }}"
+                            >
+                        </div>
+                        <div>
+                            <h5>{{ person.name }}</h5>
+                            <p>{{ person.title }} at <strong>{{ person.companyName }}</strong></p>
+                            <div class="contact-details">
+                                <div><img src="./images/dial_icon.svg" alt=""><a href="">Phone(direct)</a></div>
+                                <div><img src="./images/email_icon.svg" alt=""><a href="">Email</a></div> 
+                                <div class="desktop-pipe" style="color: lightgray">|</div>
+                                <div><a href="">Reveal</a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr class="mobile-separator">
+                    <div class="biz-info">
+                        <div class="biz-img-container">
+                            <img ng-src="{{ person.companyLogo }}" 
+                                 err-src="./images/company_Placeholder.png"
+                                 alt="{{ person.companyName }}">
+                        </div>
+                        <div>
+                            <h5>
+                                <a href="">{{ person.companyName }}</a> | {{ person.companyAddress.City }}, {{ person.companyAddress.State }}
+                            </h5>
+                            <p>{{ person.industry.join(', ') }}</p>
+                            <p>{{ person.companyEmployees }} employees <span class="desktop-pipe" style="color: lightgray">|</span> {{ person.companyRevenue }}</p>
+                        </div>
+                        <div class="side-card-stuff">
+                            <p>{{ person.lastUpdatedDate }}</p>
+                            <div class="arrow-down">
+                                <i class="material-icons">keyboard_arrow_down</i>
+                            </div>
+                        </div>
+                    </div>
+
+                </li>
+                <!-- <hr ng-if="!$last"></md-divider> -->
+            </ul>
+        </div>
+    </div>
+
+
+    <!-- Angular Material requires Angular.js Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js"></script>
+
+    <!-- Angular Material Library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
+
     <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.4/lodash.min.js"></script>
     <script src="js/app.js"></script>
-</head>
-<body ng-app="zoomInfo">
-    <div class="wrapper" ng-controller="PersonDataCtrl as PersonDataCtrl">
-    </div>
 </body>
+
 </html>
