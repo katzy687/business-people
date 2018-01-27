@@ -20,8 +20,20 @@ a {
 
 .wrapper {
   max-width: 1100px;
-  margin: 5rem auto;
+  margin: 2rem auto;
+}
+
+.filter-container {
+  display: flex;
+}
+
+.filter-container md-input-container {
+  width: 400px;
+}
+
+.list-wrapper {
   border: solid black 1px;
+
 }
 
 li,

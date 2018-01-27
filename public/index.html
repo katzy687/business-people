@@ -12,59 +12,77 @@
 
 <body ng-app="zoomInfo" ng-cloak>
     <div class="wrapper" ng-controller="PersonDataCtrl as PersonDataCtrl">
-        <md-toolbar class="md-theme-light">
-            <h2 class="md-toolbar-tools">
-                <span>Business People</span>
-            </h2>
-        </md-toolbar>
+        <div class="filter-container">
+            <md-input-container class="md-block">
+                <label>Filter for Parent Level Employees</label>
+                <input required type="number" step="any" name="rate" ng-model="idInput" min="1" max="4999"/>
+            </md-input-container>
+            <md-button class="md-primary" ng-click="getParents(idInput)">filter</md-button>
+        </div>
+        <div class="list-wrapper">
+            <md-toolbar class="md-theme-light">
+                <h2 class="md-toolbar-tools">
+                    <span>Business People</span>
+                </h2>
+            </md-toolbar>
 
-        <div class="list-container">
-            <ul>
-                <li class="person-item" ng-repeat="person in peopleData" ng-class="$last ? 'no-mb' : '' ">
-                    <div class="person-info">
-                        <md-checkbox class="checkbox"></md-checkbox>
-                        <div class="profile-img-container">
-                            <img ng-src="{{ person.profileImageURL }}"
-                                 err-src="./images/person_Placeholder.jpeg"
-                                 alt="{{ person.name }}"
-                            >
-                        </div>
-                        <div>
-                            <h5>{{ person.name }}</h5>
-                            <p>{{ person.title }} at <strong>{{ person.companyName }}</strong></p>
-                            <div class="contact-details">
-                                <div><img src="./images/dial_icon.svg" alt=""><a href="">Phone(direct)</a></div>
-                                <div><img src="./images/email_icon.svg" alt=""><a href="">Email</a></div> 
-                                <div class="desktop-pipe" style="color: lightgray">|</div>
-                                <div><a href="">Reveal</a></div>
+            <div class="list-container">
+                <ul>
+                    <li class="person-item" 
+                        ng-repeat="person in peopleData" 
+                        ng-class="$last ? 'no-mb' : '' ">
+                        <div class="person-info">
+                            <md-checkbox class="checkbox" aria-label="checkbox"></md-checkbox>
+                            <div class="profile-img-container">
+                                <img ng-src="{{ person.profileImageURL }}" err-src="./images/person_Placeholder.jpeg" alt="{{ person.name }}">
+                            </div>
+                            <div>
+                                <h5>{{ person.name }}</h5>
+                                <p>{{ person.title }} at
+                                    <strong>{{ person.companyName }}</strong>
+                                </p>
+                                <div class="contact-details">
+                                    <div>
+                                        <img src="./images/dial_icon.svg" alt="">
+                                        <a href="">Phone(direct)</a>
+                                    </div>
+                                    <div>
+                                        <img src="./images/email_icon.svg" alt="">
+                                        <a href="">Email</a>
+                                    </div>
+                                    <div class="desktop-pipe" style="color: lightgray">|</div>
+                                    <div>
+                                        <a href="">Reveal</a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <hr class="mobile-separator">
-                    <div class="biz-info">
-                        <div class="biz-img-container">
-                            <img ng-src="{{ person.companyLogo }}" 
-                                 err-src="./images/company_Placeholder.png"
-                                 alt="{{ person.companyName }}">
-                        </div>
-                        <div>
-                            <h5>
-                                <a href="">{{ person.companyName }}</a> | {{ person.companyAddress.City }}, {{ person.companyAddress.State }}
-                            </h5>
-                            <p>{{ person.industry.join(', ') }}</p>
-                            <p>{{ person.companyEmployees }} employees <span class="desktop-pipe" style="color: lightgray">|</span> {{ person.companyRevenue }}</p>
-                        </div>
-                        <div class="side-card-stuff">
-                            <p>{{ person.lastUpdatedDate }}</p>
-                            <div class="arrow-down">
-                                <i class="material-icons">keyboard_arrow_down</i>
+                        <hr class="mobile-separator">
+                        <div class="biz-info">
+                            <div class="biz-img-container">
+                                <img ng-src="{{ person.companyLogo }}" err-src="./images/company_Placeholder.png" alt="{{ person.companyName }}">
+                            </div>
+                            <div>
+                                <h5>
+                                    <a href="">{{ person.companyName }}</a> | {{ person.companyAddress.City }}, {{ person.companyAddress.State
+                                    }}
+                                </h5>
+                                <p>{{ person.industry.join(', ') }}</p>
+                                <p>{{ person.companyEmployees }} employees
+                                    <span class="desktop-pipe" style="color: lightgray">|</span> {{ person.companyRevenue }}</p>
+                            </div>
+                            <div class="side-card-stuff">
+                                <p>{{ person.lastUpdatedDate }}</p>
+                                <div class="arrow-down">
+                                    <i class="material-icons">keyboard_arrow_down</i>
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                </li>
-                <!-- <hr ng-if="!$last"></md-divider> -->
-            </ul>
+                    </li>
+                    <!-- <hr ng-if="!$last"></md-divider> -->
+                </ul>
+            </div>
         </div>
     </div>
 

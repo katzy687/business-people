@@ -5,7 +5,6 @@ var express = require ('express');
 var app = express();
 
 const data = require('./public/js/mock.json');
-console.log(data);
 
 app.use("/", express.static("./public"));
 
